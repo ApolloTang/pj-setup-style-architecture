@@ -1,0 +1,47 @@
+/* +++++++++++++++++++++++++++++++++ style-file[start] modules/font-test/style.less */
+
+@import "~common/styles-init/index";
+
+:local(.module-style) {
+    .mixin-module-style(#fff);
+
+    .layout {
+      width: 100%;
+      text-align: center;
+      span:after {
+        font-size: 70px;
+      }
+    }
+
+    @media @layout_smartphone {
+      .layout {
+        background: yellow;
+        span:after {
+          content: 'smartphone';
+        }
+      }
+    }
+
+    @media @layout_tablet {
+      .layout {
+        background: blue;
+        span:after {
+          content: 'tablet';
+          color: white;
+        }
+      }
+    }
+
+    @media @layout_pc {
+      .layout {
+        background: green;
+        span:after {
+          content: 'pc';
+          color: white;
+        }
+      }
+    }
+
+}
+
+/* +++++++++++++++++++++++++++++++++ style-file[end]   modules/font-test/style.less */

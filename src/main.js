@@ -11,6 +11,7 @@ import FontTest from 'modules-style/font-test';
 import Typography from 'modules-style/typography-test';
 import Elevations from 'modules-style/elevation-test';
 import GridDemo from 'modules-style/grids-demo';
+import LayoutDemo from 'modules-style/layout-demo';
 
 
 const navigationDirective = [
@@ -18,6 +19,7 @@ const navigationDirective = [
   {to:'/font-test', displayText:'fonts'},
   {to:'/elevation-test', displayText:'elevations'},
   {to:'/grid-demo', displayText:'grids'},
+  {to:'/layout-demo', displayText:'layout'},
 ];
 
 const RootComponent = ()=>{
@@ -31,6 +33,7 @@ const RootComponent = ()=>{
           <Route exact path="/font-test" component={FontTest} />
           <Route exact path="/elevation-test" component={Elevations} />
           <Route exact path="/grid-demo" component={GridDemo} />
+          <Route exact path="/layout-demo" component={LayoutDemo} />
           <Route component={()=><div>NotFound</div>}/>
         </Switch>
       </div>
