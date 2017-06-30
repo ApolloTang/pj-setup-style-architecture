@@ -5,7 +5,7 @@ import style from 'main.less';
 import fonts from 'common/fonts';
 
 import {BrowserRouter, Route, Switch, Link, Redirect } from 'react-router-dom';
-import SimpleNavigation from 'modules/simple-navigation';
+import SimpleNavigation from 'widgets/simple-navigation';
 
 import FontTest from 'modules-style/font-test';
 import Typography from 'modules-style/typography-test';
