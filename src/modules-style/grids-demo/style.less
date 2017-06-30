@@ -1,0 +1,35 @@
+@import "~common/styles-init/index";
+
+:local(.module-style) {
+  .mixin-module-style(#fff);
+
+  @gutter: 10px;
+  .row + .row {
+    margin-top: 10px;
+  }
+
+  .cell {
+    height: 40px;
+    background : hsl(0, 20%, 80%);
+  }
+
+  .grid-1 {
+    .mixin-column(1, 12, @gutter);
+  }
+
+  .grid-2 {
+    .mixin-column(2, 12, @gutter);
+  }
+
+  .grid-3 {
+    .mixin-column(3, 12, @gutter);
+  }
+
+  .grid-4 {
+    .mixin-column(4, 12, @gutter);
+  }
+
+  .grid-6 {
+    .mixin-column(6, 12, @gutter);
+  }
+}
