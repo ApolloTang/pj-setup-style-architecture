@@ -11,6 +11,7 @@ class ModuleRoot extends Component {
     return (
       <div className={`font-test ${style['module-style']}`}>
         <h1>This is a module to test font</h1>
+        <hr />
         <div>
           <h4>Test for Roboto family</h4>
           <p className="thin">RobotoThin</p>
@@ -20,6 +21,7 @@ class ModuleRoot extends Component {
           <p className="bold">RobotoBold</p>
           <p className="black">RobotoBlack</p>
         </div>
+        <hr />
         <div>
           <h4>Test font awesome</h4>
           <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
