@@ -9,11 +9,13 @@ import SimpleNavigation from 'widgets/simple-navigation';
 
 import FontTest from 'modules-style/font-test';
 import Typography from 'modules-style/typography-test';
+import Elevations from 'modules-style/elevation-test';
 
 
 const navigationDirective = [
   {to:'/typography', displayText:'typography'},
-  {to:'/font-test', displayText:'font test'},
+  {to:'/font-test', displayText:'fonts'},
+  {to:'/elevation-test', displayText:'elevations'},
 ];
 
 const RootComponent = ()=>{
@@ -25,6 +27,7 @@ const RootComponent = ()=>{
           <Route exact path="/" component={()=>(<div>home</div>)} />
           <Route exact path="/typography" component={Typography} />
           <Route exact path="/font-test" component={FontTest} />
+          <Route exact path="/elevation-test" component={Elevations} />
           <Route component={()=><div>NotFound</div>}/>
         </Switch>
       </div>
