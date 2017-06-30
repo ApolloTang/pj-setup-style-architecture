@@ -12,8 +12,8 @@ import Typography from 'modules-style/typography-test';
 
 
 const navigationDirective = [
-    {to:'/typography', displayText:'typography'},
-    {to:'/font-test', displayText:'font test'},
+  {to:'/typography', displayText:'typography'},
+  {to:'/font-test', displayText:'font test'},
 ];
 
 const RootComponent = ()=>{
