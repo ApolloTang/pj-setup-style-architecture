@@ -12,9 +12,11 @@ import Typography from 'modules-style/typography-test';
 import Elevations from 'modules-style/elevation-test';
 import GridDemo from 'modules-style/grids-demo';
 import LayoutDemo from 'modules-style/layout-demo';
+import TodoList from 'modules-style/todo-list';
 
 
 const navigationDirective = [
+  {to:'/todolist', displayText:'todo list'},
   {to:'/typography', displayText:'typography'},
   {to:'/font-test', displayText:'fonts'},
   {to:'/elevation-test', displayText:'elevations'},
@@ -29,6 +31,7 @@ const RootComponent = ()=>{
         <SimpleNavigation navigations={navigationDirective}/>
         <Switch>
           <Route exact path="/" component={()=>(<div>home</div>)} />
+          <Route exact path="/todolist" component={TodoList} />
           <Route exact path="/typography" component={Typography} />
           <Route exact path="/font-test" component={FontTest} />
           <Route exact path="/elevation-test" component={Elevations} />
