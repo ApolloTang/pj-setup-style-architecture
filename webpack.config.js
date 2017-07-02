@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const webpackDevServer_host = '0.0.0.0';
-const webpackDevServer_port = 9000;
+const webpackDevServer_port = 9200;
 
 const absolutePath_sourceFolder = pathResolve('src');
 const absolutePath_nodeModules = pathResolve('node_modules');
