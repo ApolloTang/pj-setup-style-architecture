@@ -10,7 +10,7 @@ class ModuleRoot extends Component {
   render() {
     return (
       <div className={`tiles-demo ${style['module-style']}`}>
-        <div className={`tiles ${style['module-style']}`}>
+        <div className={`tiles`}>
           <div className="tile"><div className="tileContent">1</div></div>
           <div className="tile"><div className="tileContent">2</div></div>
           <div className="tile"><div className="tileContent">3</div></div>
