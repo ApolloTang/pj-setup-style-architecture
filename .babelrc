@@ -1,15 +1,22 @@
 {
   "presets": [
-    {
-      "env": {
-        "targets": { "browsers": "> 5%" },
-        "modules": false,
-        "useBuiltIns": true,
-        "debug": true
-      }
-    },
+    [ "es2015", { modules: false} ],
+    "es2016",
+    "stage-2",
     "react"
-  ]
+  ],
+  "plugins": [
+    "transform-runtime",
+    "syntax-dynamic-import",
+    "transform-bluebird"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs",
+        "transform-bluebird"
+      ]
+    }
+  }
 }
-
 
