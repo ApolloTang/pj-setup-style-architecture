@@ -10,8 +10,6 @@
     "url": "https://github.com/ApolloTang/pj-setup-style-architecture"
   },
   "devDependencies": {
-  },
-  "dependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-bluebird": "^0.1.1",
@@ -32,7 +30,9 @@
     "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
     "webpack-config-utils": "^2.3.0",
-    "webpack-dev-server": "^2.5.0",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "dependencies": {
     "classnames": "^2.2.5",
     "express": "^4.15.3",
     "lodash": "^4.17.4",
@@ -46,7 +46,7 @@
     "dev:debug": "webpack-dev-server --env.dev --env.debug",
     "build": "webpack --env.prod -p ",
     "prebuild": "rimraf dist",
-    "start": "node server.js",
+    "start": "yarn build && node server.js",
     "clean": "rimraf dist",
     "debug": "node-nightly --inspect-brk node_modules/.bin/webpack --env.debug"
   }
