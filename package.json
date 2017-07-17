@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "compression": "^1.7.0",
     "express": "^4.15.3",
     "lodash": "^4.17.4",
     "prop-types": "^15.5.10",
@@ -46,7 +47,7 @@
     "dev:debug": "webpack-dev-server --env.dev --env.debug",
     "build": "webpack --env.prod -p ",
     "prebuild": "rimraf dist",
-    "deploy" : "git push heroku deploy:master",
+    "deploy": "git push heroku deploy:master",
     "start": "node server.js",
     "clean": "rimraf dist",
     "debug": "node-nightly --inspect-brk node_modules/.bin/webpack --env.debug"
