@@ -66,31 +66,31 @@ const config_fn = env => {
       loaders: removeEmpty(
         [
           {
-            test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$/,           // [12]
-            loader: 'file-loader?name=./imgs/[name].[hash].[ext]',  // [13][21][23]
-            exclude: pathResolve('src/common/fonts')                // [40]
+            test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$/,
+            loader: 'file-loader?name=./imgs/[name].[hash].[ext]',
+            exclude: pathResolve('src/common/fonts')
           },
           {
-            test: /\.(woff|woff2|ttf|eot|svg|otf)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,  // [38]
-            loader: 'file-loader?&name=fonts/[name].[ext]'                               // [39]
+            test: /\.(woff|woff2|ttf|eot|svg|otf)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
+            loader: 'file-loader?&name=fonts/[name].[ext]'
           },
           ifProd(
             {
-              test: /\.(less|css)$/,                               // [41]
-              use: ExtractTextPlugin.extract({                  // [19]
+              test: /\.(less|css)$/,
+              use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
-                use: 'css-loader!less-loader'                 // [37][42]
+                use: 'css-loader!less-loader'
               }),
               include: absolutePath_sourceFolder
             },
             {
-              test: /\.(less|css$)/,                               // [30][41]
-              loader: 'style-loader!css-loader!less-loader',       // [37][42]
+              test: /\.(less|css$)/,
+              loader: 'style-loader!css-loader!less-loader',
               include: absolutePath_sourceFolder
             }
           ),
           {
-            test: /\.jsx?$/,                                           //[34]
+            test: /\.jsx?$/,
             loaders: 'babel-loader',
             exclude: /node_modules/
           }
@@ -126,119 +126,19 @@ const config_fn = env => {
           })
         ),
         ifProd(
-          new ExtractTextPlugin('styles.[name].[chunkhash].css')       // [19][22][30]
+          new ExtractTextPlugin('styles.[name].[chunkhash].css')
         ),
         ifProd(
           new InlineManifestWebpackPlugin()
         )
       ]
     ),
-    // devtool:  'eval', // Shows uncompiled webpack source code during development mode (use this when debug webpack)
-    devtool:  'eval-source-map', // Shows original code during development mode (use this when debug application)
-    // devtool:  'cheap-module-eval-source-map', // Won't pause in debugger, and show no code (don't use this)
+    devtool: ifProd( sourceMapType.prod, sourceMapType.dev )
+
   }
 
-  // ------------------------------
-  //
-    // const config = {
-    //     devServer: {
-    //         historyApiFallback: true,
-    //         host: webpackDevServer_host,
-    //         port: webpackDevServer_port
-    //     },
-    //     // performance: {
-    //     //     hints: (info === 'true') ? 'warning' : false                    // [11]
-    //     // },
-    //     context: absolutePath_sourceFolder,                                 // [2]
-    //     entry: {                                                            // [9]
-    //         vendor: [
-    //             './vendor/third-party-code.js'
-    //         ],
-    //         // common: [
-    //             // './util/helper.js'
-    //         // ],
-    //         main: './main.js'
-    //     },
-    //     output: {
-    //         pathinfo: ifNotProd(),                                          // [35]
-    //         publicPath: '/',
-    //         path: absolutePath_buildFolder,                                 // [4]
-    //         filename: ifProd(
-    //             'bundle.[name].[chunkhash].js',                             // [9][22]
-    //             'bundle.[name].[hash]js'                                    // [28]
-    //         )
-    //     },
-    //     resolve: {
-    //         modules: [                                                      // [16]
-    //             absolutePath_sourceFolder,
-    //             absolutePath_nodeModules
-    //         ],
-    //         extensions: ['.js', '.less', '.css']                            // [17][43]
-    //     },
-    //     module: {
-    //         loaders: removeEmpty([                                          // [29]
-    //             {
-    //                 test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$/,           // [12]
-    //                 loader: 'file-loader?name=./imgs/[name].[hash].[ext]',  // [13][21][23]
-    //                 exclude: pathResolve('src/common/fonts')                // [40]
-    //             },
-    //             {
-    //                 test: /\.(woff|woff2|ttf|eot|svg|otf)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,  // [38]
-    //                 loader: 'file-loader?&name=fonts/[name].[ext]'                               // [39]
-    //             },
-    //             ifProd(
-    //                 {
-    //                     test: /\.(less|css)$/,                               // [41]
-    //                     use: ExtractTextPlugin.extract({                  // [19]
-    //                         fallback: 'style-loader',
-    //                         use: 'css-loader!less-loader'                 // [37][42]
-    //                     }),
-    //                     include: absolutePath_sourceFolder
-    //                 },
-    //                 {
-    //                     test: /\.(less|css$)/,                               // [30][41]
-    //                     loader: 'style-loader!css-loader!less-loader',       // [37][42]
-    //                     include: absolutePath_sourceFolder
-    //                 }
-    //             ),
-    //             {
-    //                 test: /\.jsx?$/,                                           //[34]
-    //                 loaders: 'babel-loader',
-    //                 exclude: /node_modules/
-    //             }
-    //         ])
-    //     },
-    //     plugins: removeEmpty([                                               // [29]
-    //         new HtmlWebpackPlugin({
-    //             template: './index.template.html',
-    //             favicon: './common/images/favicon.ico'                       // [15]
-    //         }),
-    //         new ProgressBarPlugin(),                                         // [7]
-    //         ifProd(
-    //             new webpack.optimize.CommonsChunkPlugin({
-    //                 name: [                                                  // [10]
-    //                     'vendor', 'common',
-    //                     'manifest'                                           // [25]
-    //                 ]
-    //             }),
-    //             new webpack.optimize.CommonsChunkPlugin({
-    //                 name: [                                                  // [31]
-    //                     'vendor', 'common'
-    //                 ]
-    //             })
-    //         ),
-    //         ifProd(
-    //             new ExtractTextPlugin('styles.[name].[chunkhash].css')       // [19][22][30]
-    //         ),
-    //         ifProd(
-    //             new InlineManifestWebpackPlugin()                            // [31]
-    //         )
-    //     ]),
-    //     devtool: ifProd( sourceMapType.prod, sourceMapType.dev )             // [32]
-    // };
-
   if ( env && env.debug ) {
-    console.log('webpack.config: ', config)                              // [8]
+    console.log('webpack.config: ', config)
   }
   return config;
 };

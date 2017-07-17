@@ -1,8 +1,8 @@
 {
-  "name": "style-architecture",
+  "name": "snappycrunchy",
+  "description": "A style-architecture",
   "version": "1.0.0",
   "main": "webpack.config.js",
-  "description": "A style-architecture",
   "author": "Apollo Tang <tang.apollo@gmail.com>",
   "license": "BSD-3-Clause",
   "repository": {
@@ -42,12 +42,11 @@
     "react-router-dom": "^4.1.1"
   },
   "scripts": {
-    "//": "...............  build for distribution  ..............",
     "dev": "webpack-dev-server --env.dev --no-info",
-    "dev:debug": "webpack-dev-server --env.dev --env.debug --no-info",
-    "start": "node server.js",
-    "build": "webpack --env.prod -p --define process.env.prod='true'",
+    "dev:debug": "webpack-dev-server --env.dev --env.debug",
+    "build": "webpack --env.prod -p ",
     "prebuild": "rimraf dist",
+    "start": "node server.js",
     "clean": "rimraf dist",
     "debug": "node-nightly --inspect-brk node_modules/.bin/webpack --env.debug"
   }

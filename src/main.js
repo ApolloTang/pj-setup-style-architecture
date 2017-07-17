@@ -14,7 +14,7 @@ import GridDemo from 'modules-style/grids-demo';
 import LayoutDemo from 'modules-style/layout-demo';
 import Tiles from 'modules-style/tiles-demo';
 
-// console.info('xxxxx: target', target); // eslint-disable-line no-console
+if (target!=='production') console.info(`========== Build target: ${target} ===========`); // eslint-disable-line no-console
 
 const navigationDirective = [
   {to:'/tiles-demo', displayText:'Tiles'},
