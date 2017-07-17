@@ -46,7 +46,8 @@
     "dev:debug": "webpack-dev-server --env.dev --env.debug",
     "build": "webpack --env.prod -p ",
     "prebuild": "rimraf dist",
-    "start": "yarn build && node server.js",
+    "deploy" : "git push heroku deploy:master",
+    "start": "node server.js",
     "clean": "rimraf dist",
     "debug": "node-nightly --inspect-brk node_modules/.bin/webpack --env.debug"
   }
