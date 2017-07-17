@@ -1,7 +1,7 @@
 {
   "name": "snappycrunchy",
   "description": "A style-architecture",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "webpack.config.js",
   "author": "Apollo Tang <tang.apollo@gmail.com>",
   "license": "BSD-3-Clause",
