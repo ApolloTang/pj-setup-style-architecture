@@ -1,4 +1,4 @@
-/* +++++++++++++++++++++++++++++++++ style-file[start] src/common/fonts/roboto/index.css */
+/* ++++ style-file[start] src/common/fonts/roboto/index.css */
 
 @font-face {
     font-family: 'RobotoThin';
@@ -42,4 +42,4 @@
          url('/fonts/Roboto-Black.ttf') format('truetype');
 }
 
-/* +++++++++++++++++++++++++++++++++ style-file[end] src/common/fonts/roboto/index.css */
+/* ++++ style-file[end] src/common/fonts/roboto/index.css */
