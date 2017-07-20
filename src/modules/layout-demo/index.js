@@ -1,7 +1,3 @@
-if (process && process.env && process.env.CONSOLE_LOG) {
-  console.info('log from file: src/modules/font-test/index.js'); // eslint-disable-line no-console
-}
-
 import React, {Component} from 'react';
 
 import style from './style';

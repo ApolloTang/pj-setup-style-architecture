@@ -1,0 +1,19 @@
+@import "~common/styles-init/index";
+
+:local(.module-style) {
+  @menu-width: 150px;
+  .menu {
+    height: 100%;
+    float:left;
+    width: @menu-width;
+    outline: 1px solid blue;
+
+  }
+  .workspace {
+    height: 100%;
+    float:left;
+    width: calc( ~"100% - "@menu-width );
+    outline: 1px solid red;
+  }
+}
+
