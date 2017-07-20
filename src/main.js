@@ -2,19 +2,12 @@ import React from 'react';
 import {render} from 'react-dom';
 
 import style from 'main.less';
-import fonts from 'common/fonts';
+import fonts from 'common/styles/fonts';
 
-import {BrowserRouter} from 'react-router-dom';
+if (target!=='production') {
+  console.info(`========== Build target: ${target} ===========`); // eslint-disable-line no-console
+}
 
-import ThisApp from './this-app/';
-
-if (target!=='production') console.info(`========== Build target: ${target} ===========`); // eslint-disable-line no-console
-
-const RootComponent = ()=>(
-  <BrowserRouter>
-    <ThisApp />
-  </BrowserRouter>
-);
-
+import RootComponent from 'root-infarstructure';
 const rootContainer = document.getElementById("root-container");
 render( <RootComponent /> , rootContainer);
