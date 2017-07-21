@@ -7,6 +7,7 @@ import Tiles      from 'modules/tiles-demo';
 import Elevations from 'modules/elevation-test';
 import GridDemo   from 'modules/grids-demo';
 import LayoutDemo from 'modules/layout-demo';
+import SimpleNavigationDemo from 'modules/simple-navigation-demo';
 
 const navigationDirective = [
   {to:'/font-test',               displayText:'fonts'},
@@ -15,6 +16,7 @@ const navigationDirective = [
   {to:'/elevation-test',          displayText:'elevations'},
   {to:'/grid-demo',               displayText:'grids'},
   {to:'/layout-demo',             displayText:'layout'},
+  {to:'/simple-navigation-demo',  displayText:'Simple Navigation'},
 ];
 
 const Routes = () => (
@@ -26,6 +28,7 @@ const Routes = () => (
     <Route exact path="/elevation-test"         component={Elevations} />
     <Route exact path="/grid-demo"              component={GridDemo} />
     <Route exact path="/layout-demo"            component={LayoutDemo} />
+    <Route exact path="/simple-navigation-demo" component={SimpleNavigationDemo} />
     <Route                                      component={()=><div>NotFound</div>}/>
   </Switch>
 );

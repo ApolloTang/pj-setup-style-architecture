@@ -8,7 +8,7 @@ import style from './style.less';
 const ModuleRoot = (props) => {
   return (
     <div className={`simple-navigation ${style['module-style']}`}>
-      <div className={(props.direction==='horizotal')?'horizotal':'vertical'}>
+      <div className={(props.direction==='horizontal')?'horizontal':'vertical'}>
         <ul>
           {
             props.navigations.map((n,i)=>(
