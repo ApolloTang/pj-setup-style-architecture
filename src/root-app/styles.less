@@ -3,21 +3,24 @@
 @import "~common/styles/index.less";
 
 #root-app.theme-a {
+  @import "./styles/app-styles-theme-a/init/index.less";
+
   .mixin-clearfix();
-  @import "./styles/app-style-init-theme-a/index.less";
   background-color: @global-background-color;
   color: @global-text-color;
   font-family: @global-default-font;
   outline: solid blue 3px;
   .grids-demo {
-    background:red;
+    background:yellow;
   }
+
 }
 
 
 #root-app.theme-b {
+  @import "./styles/app-styles-theme-b/init/index.less";
+
   .mixin-clearfix();
-  @import "./styles/app-style-init-theme-b/index.less";
   background-color: @global-background-color;
   color: @global-text-color;
   font-family: @global-default-font;
@@ -25,5 +28,6 @@
   .grids-demo {
     background:red;
   }
+
 }
 /* ++++ style-file: src/root-app/styles.less [end] */

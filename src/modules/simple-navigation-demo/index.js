@@ -4,7 +4,7 @@ import SimpleNavigation from 'widgets/simple-navigation';
 
 const navigationDirective = [
   {to:'/font-test',               displayText:'fonts'},
-  // {to:'/typography',              displayText:'typography'},
+  {to:'/typography',              displayText:'typography'},
   {to:'/tiles-demo',              displayText:'Tiles'},
   {to:'/elevation-test',          displayText:'elevations'},
   {to:'/grid-demo',               displayText:'grids'},

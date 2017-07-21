@@ -1,0 +1,96 @@
+/* ++++ style-file: modules/typography-test/style.less [start] */
+
+@import "~common/styles/index.less";
+
+// @import '~root-app/styles/app-styles-config.less';
+
+#root-app.theme-a {
+  @import '~root-app/styles/app-styles-theme-a/init/index.less';
+  :local(.module-style) {
+
+    .text__size_headline {
+      .text__size_headline();
+    }
+
+    .text__size_display-1 {
+      .text__size_display-1();
+    }
+
+    .text__size_display-2 {
+      .text__size_display-2();
+    }
+
+    .text__size_relative-nagative1 {
+      .text__size_relative(-1);
+    }
+
+    .text__size_relative-0 {
+      .text__size_relative(0);
+    }
+
+    .text__size_relative-1 {
+      .text__size_relative(1);
+    }
+
+    .text__size_relative-2 {
+      .text__size_relative(2);
+    }
+
+    .text__size_relative-3 {
+      .text__size_relative(3);
+    }
+
+    .text__size_relative-4 {
+      .text__size_relative(4);
+    }
+  }
+}
+
+
+#root-app.theme-b {
+  @import '~root-app/styles/app-styles-theme-b/init/index.less';
+  :local(.module-style) {
+    .text__size_headline {
+      .text__size_relative(-1);
+    }
+
+    .text__size_display-1 {
+      .text__size_relative(-1);
+    }
+
+    .text__size_display-2 {
+      .text__size_relative(-1);
+    }
+
+    .text__size_relative-nagative1 {
+      .text__size_relative(-1);
+    }
+
+    .text__size_relative-0 {
+      .text__size_relative(-1);
+    }
+
+    .text__size_relative-1 {
+      .text__size_relative(-1);
+    }
+
+    .text__size_relative-2 {
+      .text__size_relative(-1);
+    }
+
+    .text__size_relative-3 {
+      .text__size_relative(-1);
+    }
+
+    .text__size_relative-4 {
+      .text__size_relative(-1);
+    }
+  }
+}
+
+
+:local(.module-style) {
+}
+
+
+/* ++++ style-file: modules/typography-test/style.less [end] */
