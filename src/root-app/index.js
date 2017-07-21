@@ -14,7 +14,7 @@ class RootApp extends React.Component {
   }
   render() {
     return (
-      <div id="root-app">
+      <div id="root-app" className="theme-a">
         <MainLayout
           Navigation={ <SimpleNavigation navigations={navigationDirective} /> }
           Routes={ <Routes />}
