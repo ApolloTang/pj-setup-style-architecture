@@ -1,24 +1,26 @@
-/* ++++ style-file[start] src/main.less */
+/* ++++ style-file: main.less [start] */
 
-@import "~common/styles-init/index";
+@import "~common/styles/index.less";
 
-* {
-  box-sizing: border-box;
-}
+/* Root Container Reset [begin] */
+  * {
+    box-sizing: border-box;
+  }
 
-html {
-  height: 100%;
-}
+  html {
+    height: 100%;
+  }
 
-body {
-  height: 100%;
-  background-color: @global-background-color;
-  color: @global-text-color;
-  font-family: @global-default-font;
-}
+  body {
+    height: 100%;
 
-#root-container {
-  .mixin-clearfix();
-}
+  }
 
-/* ++++ style-file[end]   src/main.less */
+  #root-container {
+    .mixin-clearfix();
+    height: 100%;
+  }
+/* Root Container Reset [completed] */
+
+
+/* ++++ style-file: main.less [end]   */

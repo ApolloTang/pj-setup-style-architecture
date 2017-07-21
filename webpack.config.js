@@ -16,6 +16,7 @@ const sourceMapType = getSourceMapType('b');
 const absolutePath_sourceFolder = pathResolve('src');
 const absolutePath_buildFolder = pathResolve('dist');
 const absolutePath_nodeModules = pathResolve('node_modules');
+const absolutePath_fonts = pathResolve('src/commmon/styles/fonts');
 
 const config_fn = env => {
   const {ifProd, ifNotProd} = getIfUtils(env);
@@ -23,8 +24,9 @@ const config_fn = env => {
   if ( env && env.dev && env.debug ) {
       console.log('absolutePath_sourceFolder: ', absolutePath_sourceFolder);
       console.log('absolutePath_sourceFolder: ', absolutePath_sourceFolder);
-      console.log('absolutePath_buildFolder: ', absolutePath_buildFolder);
-      console.log('absolutePath_nodeModules: ', absolutePath_nodeModules);
+      console.log('absolutePath_buildFolder: ' , absolutePath_buildFolder);
+      console.log('absolutePath_nodeModules: ' , absolutePath_nodeModules);
+      console.log('absolutePath_fonts: '       , absolutePath_fonts);
   }
 
   const config = {
@@ -41,9 +43,9 @@ const config_fn = env => {
       vendor: [
         './vendor/third-party-code.js'
       ],
-      // common: [
-      //   './util/helper.js'
-      // ],
+      common: [
+        './common/utils/helper.js'
+      ],
       main: './main.js'
     },
     output: {
@@ -68,7 +70,7 @@ const config_fn = env => {
           {
             test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$/,
             loader: 'file-loader?name=./imgs/[name].[hash].[ext]',
-            exclude: pathResolve('src/common/fonts')
+            exclude: absolutePath_fonts
           },
           {
             test: /\.(woff|woff2|ttf|eot|svg|otf)(\?v=[a-z0-9]\.[a-z0-9]\.[a-z0-9])?$/,
@@ -109,7 +111,7 @@ const config_fn = env => {
         ),
         new HtmlWebpackPlugin({
           template: './index.template.html',
-          favicon: './common/images/favicon.ico'
+          favicon: './common/styles/images/favicon.ico'
         }),
         new ProgressBarPlugin(),
         ifProd(

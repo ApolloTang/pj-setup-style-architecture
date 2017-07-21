@@ -8,13 +8,13 @@ import {navigationDirective} from './routes';
 
 
 import styles from './styles.less';
-class ThisApp extends React.Component {
+class RootApp extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
     return (
-      <div className="this-app">
+      <div id="root-app" className="theme-a">
         <MainLayout
           Navigation={ <SimpleNavigation navigations={navigationDirective} /> }
           Routes={ <Routes />}
@@ -24,5 +24,5 @@ class ThisApp extends React.Component {
   }
 };
 
-export default ThisApp;
+export default RootApp;
 
