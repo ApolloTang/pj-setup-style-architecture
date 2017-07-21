@@ -1,15 +1,14 @@
-/* ++++ style-file src/root-app/styles.less [start] */
+/* ++++ style-file: src/root-app/styles.less [start] */
 
 @import "~common/styles/index.less";
 
-@import "./styles/app-style-init/index.less";
-
 #root-app {
+  .mixin-clearfix();
+  @import "./styles/app-style-init/index.less";
   background-color: @global-background-color;
   color: @global-text-color;
   font-family: @global-default-font;
   outline: solid blue 3px;
-  .mixin-clearfix();
 }
 
-/* ++++ style-file src/root-app/styles.less [end] */
+/* ++++ style-file: src/root-app/styles.less [end] */
